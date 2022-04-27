@@ -144,7 +144,7 @@ export declare class StageComponent implements OnInit, OnDestroy {
     /**
        * Gets the difference of two vectors.
        * @param first The first vector.
-       * @param second- The second vector.
+       * @param second The second vector.
        * @returns The difference.
        */
     private _difference;

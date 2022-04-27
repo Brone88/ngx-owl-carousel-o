@@ -247,7 +247,7 @@ let CarouselService = class CarouselService {
             }, {
                 filter: ['items', 'settings'],
                 run: () => {
-                    const clones = [], items = this._items, settings = this.settings, 
+                    const clones = [], items = this._items, settings = this.settings,
                     // TODO: Should be computed from number of min width items in stage
                     view = Math.max(settings.items * 2, 4), size = Math.ceil(items.length / 2) * 2;
                     let append = [], prepend = [], repeat = settings.loop && items.length ? settings.rewind ? view : Math.max(view, size) : 0;
@@ -1459,10 +1459,16 @@ let CarouselService = class CarouselService {
        * Gets the difference of two vectors.
        * @todo #261
        * @param first The first vector.
-       * @param second- The second vector.
+       * @param second The second vector.
        * @returns The difference.
        */
     difference(first, second) {
+        if (null === first || null === second) {
+          return {
+            x: 0,
+            y: 0,
+          };
+        }
         return {
             x: first.x - second.x,
             y: first.y - second.y
